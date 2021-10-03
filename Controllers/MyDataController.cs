@@ -18,7 +18,7 @@ namespace DatingApp.Controllers
 
         private readonly ILogger<MyDataController> _logger;
 
-        public WeatherController(ILogger<MyDataController> logger)
+        public MyDataController(ILogger<MyDataController> logger)
         {
             _logger = logger;
         }
@@ -31,7 +31,7 @@ namespace DatingApp.Controllers
             {
                 Name = "Mohamed Samir",
                 YearOfBirth = 1996,
-                Abilties=
+                Abilties = Abilties[rng.Next(Abilties.Length)]
             })
             .ToArray();
         }
