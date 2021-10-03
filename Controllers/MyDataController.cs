@@ -15,7 +15,10 @@ namespace DatingApp.Controllers
         {
             ".Net","C#","HTML","CSS","JavaScript","Algorithms","DataStructures","OOP","DesignPatterns","SOLID"
         };
-
+        private static readonly string[] Name = new[]
+        {
+            "Moahemd","Samir","test1","test2"
+        };
         private readonly ILogger<MyDataController> _logger;
 
         public MyDataController(ILogger<MyDataController> logger)
@@ -23,7 +26,8 @@ namespace DatingApp.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpGet]//End point 
+        //that we get when HTTP GET request data from API Server
         public IEnumerable<MyData> Get()
         {
             var rng = new Random();
