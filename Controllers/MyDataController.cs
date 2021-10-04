@@ -17,7 +17,11 @@ namespace DatingApp.Controllers
         };
         private static readonly string[] Name = new[]
         {
-            "Moahemd","Samir","test1","test2"
+            "Moahemd","Samir","amin","test2"
+        };
+        private static readonly int [] YearOfBirth=new []
+        {
+            1997,1996,1967,2000
         };
         private readonly ILogger<MyDataController> _logger;
 
@@ -33,8 +37,8 @@ namespace DatingApp.Controllers
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new MyData
             {
-                Name = "Mohamed Samir",
-                YearOfBirth = 1996,
+                Name = Name[rng.Next(Name.Length)],
+                YearOfBirth = YearOfBirth[rng.Next(YearOfBirth.Length)],
                 Abilties = Abilties[rng.Next(Abilties.Length)]
             })
             .ToArray();
